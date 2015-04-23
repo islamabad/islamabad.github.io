@@ -1,0 +1,44 @@
+#yourcode {
+	margin-left: 9px;
+	margin-top: 15px;
+	width: 99%;
+	height: 450px;
+	/*resize:no*/
+}
+
+
+#exec {
+	margin-left: 9px;
+	background-color:#92bf21;
+	border-color: #92bf21;
+}
+
+
+#output {
+	margin-left: 9px;
+	width: 99%;
+	height: 250px;
+}
+
+.modal-body {
+    height: 500px;
+}
+
+#tit {
+	display: inline-block;
+	width: 60%;
+	height: 30px;
+	color: #6dc4d7;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 50px;
+	margin-left: 45px;
+}
+
+#tits {
+	color: #92bf21;
+}
+
+#closem {
+	background-color: #92bf21;
+	border-color: #92bf21;
+}
