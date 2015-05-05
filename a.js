@@ -1,3 +1,10 @@
+$(document).ready(function () {
+    $('pre').each(function (i, block) {
+        //alert(block.innerHTML);
+        hljs.highlightBlock(block);
+    });
+});
+
 // output functions are configurable.  This one just appends some text
 // to a pre element.
 function outf(text) { 
@@ -16,11 +23,12 @@ function builtinRead(x) {
 // configure the output function
 // call Sk.importMainWithBody()
 function runit() { 
-   var prog = document.getElementById("yourcode").value; 
-   var mypre = document.getElementById("output"); 
+   var prog = document.getElementById("code").innerText;
+   var mypre = document.getElementById("output");
    mypre.innerHTML = ''; 
    Sk.canvas = "mycanvas";
    Sk.pre = "output";
+   //alert(prog);
    Sk.configure({output:outf, read:builtinRead}); 
    try {
       eval(Sk.importMainWithBody("<stdin>",false,prog)); 
@@ -29,3 +37,7 @@ function runit() {
        alert(e.toString())
    }
 }
+
+
+
+
