@@ -3,6 +3,12 @@ $(document).ready(function () {
         //alert(block.innerHTML);
         hljs.highlightBlock(block);
     });
+
+    $( "#code" ).mouseleave(function() {
+        $('pre').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
 });
 
 // output functions are configurable.  This one just appends some text
@@ -37,7 +43,5 @@ function runit() {
        alert(e.toString())
    }
 }
-
-
 
 
