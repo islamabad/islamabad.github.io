@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Fixed Blockly</title>
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="messages/pt.js"></script>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <script src="concat.js"></script>
+
+  <!-- Bootstrap -->
+     <link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style>
+
+
+</head>
+<body>
+  
+  <div class = "container">
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  </div>
+
+  <script>
+    Blockly.inject(document.getElementById('blocklyDiv'),
+        {toolbox: localStorage.getItem('toolbox')});
+  </script>
+
+</body>
+</html>
