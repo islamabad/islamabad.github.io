@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
-  <title>Blockly Demo: Fixed Blockly</title>
-  <script src="blockly_compressed.js"></script>
-  <script src="blocks_compressed.js"></script>
-  <script src="messages/pt.js"></script>
+    <title>escolaglobal - Blockly Workspace</title>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <script src="concat.js"></script>
+    <script src="blockly-master/blockly_compressed.js"></script>
+    <script src="blockly-master/blocks_compressed.js"></script>
+    <script src="blockly-master/msg/js/pt.js"></script>
+    <script src="blockly-master/javascript_compressed.js"></script>
 
-  <!-- Bootstrap -->
-     <link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <script src="concat.js"></script>
+
+    <!-- Bootstrap -->
+    <!--     <link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet">-->
     <link href="../bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styles.css">
 
-  <style>
-    body {
-      background-color: #fff;
-      font-family: sans-serif;
-    }
-    h1 {
-      font-weight: normal;
-      font-size: 140%;
-    }
-  </style>
-
-
 </head>
+    
+    
 <body>
-  
-  <div class = "container">
-    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
-  </div>
 
-  <script>
-    Blockly.inject(document.getElementById('blocklyDiv'),
-        {toolbox: localStorage.getItem('toolbox')});
-  </script>
+    <table>
+        <tr>  
+          <td><button onclick="runJS()">Executar</button></td>
+        </tr>
+        <tr>
+          <td id="blocklyArea">
+            Blockly will be positioned here.
+          </td>
+        </tr>
+    </table>
+
+    <div id="blocklyDiv" style="position: absolute"></div>
+
+    <script>
+        var blocklyArea = document.getElementById('blocklyArea');
+        var blocklyDiv = document.getElementById('blocklyDiv');
+        var workspace = Blockly.inject(blocklyDiv,
+            {toolbox: localStorage.getItem('toolbox'),
+             trashcan: true});
+        var onresize = function(e) {
+          // Compute the absolute coordinates and dimensions of blocklyArea.
+              var element = blocklyArea;
+              var x = 0;
+              var y = 0;
+              do {
+                x += element.offsetLeft;
+                y += element.offsetTop;
+                element = element.offsetParent;
+                 } while (element);
+          // Position blocklyDiv over blocklyArea.
+          blocklyDiv.style.left = x + 'px';
+          blocklyDiv.style.top = y + 'px';
+          blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+          blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+        };
+        window.addEventListener('resize', onresize, false);
+        onresize();
+    </script>
+
+    <script>
+      function runJS() {
+        Blockly.JavaScript.addReservedWords('code');
+        var code = Blockly.JavaScript.workspaceToCode();
+        alert(code);
+        try {
+          eval(code);
+        } catch (e) {
+          alert(e);
+        }
+      }
+    </script>
 
 </body>
+    
+    
 </html>

@@ -1,7 +1,7 @@
 var toolbox = "";
 var control = "<category name='Control'><block type='controls_if'></block><block type='controls_whileUntil'></block></category>";
 var logic = "<category name='Logic'><block type='logic_compare'></block><block type='logic_operation'></block><block type='logic_boolean'></block></category>";
-var blocks = "<category name='Blocks'><block type='logic_boolean'></block><block type='math_number'><field name='NUM'>42</field></block><block type='controls_for'><value name='FROM'><block type='math_number'><field name='NUM'>1</field></block></value><value name='TO'><block type='math_number'><field name='NUM'>10</field></block></value><value name='BY'><block type='math_number'><field name='NUM'>1</field></block></value></block></category>";
+var blocks = "<category name='Blocks'><block type='text'></block><block type='text_print'></block></category>";
 
 var XML = document.createElement("xml");
 
