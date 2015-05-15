@@ -28,19 +28,38 @@
     
     
 <body>
+    
+    
+<div id="blockly-workspace-header">
+      <div id="toolbox-header" class="workspace-header" style="width: 212.18571472168px;">
+        <span>blocos</span>
+      </div>
+      <div id="clear-puzzle-header" class="workspace-header"><span>Recomeçar</span></div>
+      <div id="workspace-header" class="workspace-header">
+        <span id="workspace-header-span">Workspace:  </span>
+        <div id="block-counter">
+          <div id="blocks-used" class="block-counter">X</div>
+          <span>/</span>
+          <span id="max-blocks">Y</span>
+          <span> blocos</span>
+        </div>
+      </div>
+</div>
+    
 
     <table>
-        <tr>  
-          <td><button onclick="runJS()">Executar</button></td>
-        </tr>
         <tr>
-          <td id="blocklyArea">
-            Blockly will be positioned here.
-          </td>
+            <td><button id="exec" type="button" class="btn btn-primary" onclick="runJS()">Executar</button></td>
+        </tr>
+        <tr id="blocklyArea">
+            <!--<td id="blocklyArea">
+                Blockly will be positioned here. If this is showing, blockly isn't running correctly.
+            </td>-->
         </tr>
     </table>
 
     <div id="blocklyDiv" style="position: absolute"></div>
+    
 
     <script>
         var blocklyArea = document.getElementById('blocklyArea');

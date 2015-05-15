@@ -18,3 +18,62 @@ html, body {
         #blocklyArea {
           height: 99%;
         }
+
+#exec {
+	background-color:#92bf21;
+	border-color: #92bf21;
+}
+
+ #blockly-workspace-header #toolbox-header {
+    width: 270px;
+    border-right: 1px solid gray;
+    float: left; }
+
+
+#blockly-workspace-header {
+  height: 40px;
+  background-color: #4168e8;
+ }
+  #blockly-workspace-header .workspace-header {
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: hidden;
+    height: 40px; }
+    #blockly-workspace-header .workspace-header span {
+      color: white;
+      line-height: 40px; }
+  #blockly-workspace-header #toolbox-header {
+    width: 270px;
+    border-right: 1px solid white;
+    float: left; }
+  #blockly-workspace-header #show-toolbox-header {
+    border: 0;
+    float: left;
+    padding: 0 10px; }
+  #blockly-workspace-header #block-counter, #blockly-workspace-header #blocks-used {
+    display: inline-block; }
+  #blockly-workspace-header #clear-puzzle-header, #blockly-workspace-header #show-code-header {
+    cursor: pointer;
+    float: right;
+    border-left: 1px solid white; }
+    #blockly-workspace-header #clear-puzzle-header span, #blockly-workspace-header #show-code-header span {
+      padding: 0 20px; }
+  #blockly-workspace-header #clear-puzzle-header:hover {
+    background-color: #c00; }
+  #blockly-workspace-header .block-counter-default {
+    color: white; }
+  #blockly-workspace-header .block-counter-overflow {
+    color: #ffb81d; }
+
+#blockly-workspace-header[dir=rtl] div {
+  margin-right: 0; }
+#blockly-workspace-header[dir=rtl] #toolbox-header {
+  border-right: 0;
+  border-left: 1px solid gray;
+  float: right; }
+#blockly-workspace-header[dir=rtl] #show-toolbox-header {
+  float: right; }
+#blockly-workspace-header[dir=rtl] #clear-puzzle-header, #blockly-workspace-header[dir=rtl] #show-code-header {
+  border-left: 0;
+  border-right: 1px solid gray;
+  float: left; }
